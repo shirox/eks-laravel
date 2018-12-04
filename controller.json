@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"shirox",
+      "labels":{
+         "app":"shirox"
+      }
+   },
+   "spec":{
+      "replicas":2,
+      "selector":{
+         "app":"shirox"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"shirox"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"shirox",
+                  "image":"251555968592.dkr.ecr.us-east-1.amazonaws.com/xxxxxx:latest",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":79
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
